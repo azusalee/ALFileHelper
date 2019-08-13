@@ -197,6 +197,11 @@ UIAlertController *alertController = [UIAlertController alertControllerWithTitle
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FileCell"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"FileCell"];
+        //添加长按手势
+        UILongPressGestureRecognizer * longPressGesture =[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(cellLongPress:)];
+        
+        longPressGesture.minimumPressDuration=1.0f;//设置长按 时间
+        [cell addGestureRecognizer:longPressGesture];
     }
     
     AZLFileObject *fileObject = self.fileObject.subPaths[indexPath.row];
@@ -234,7 +239,7 @@ UIAlertController *alertController = [UIAlertController alertControllerWithTitle
 }
 
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath\
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return YES;
 }
@@ -257,6 +262,60 @@ UIAlertController *alertController = [UIAlertController alertControllerWithTitle
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
         }
     }
+}
+
+-(BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+//-(NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    //不知道为什么只有tableView侧滑到头的时候才走这个代理方法，点击是无效的。
+//    UITableViewRowAction *rowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive
+//                                                                         title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+//
+//                                                                             //BYLog(@"删除");
+//                                                                             
+//                                                                         }];
+//    //rowAction.backgroundColor = MainOrgColor;
+////    tableView.
+//    NSArray *arr = @[rowAction];
+//    return arr;
+//}
+
+-(void)cellLongPress:(UILongPressGestureRecognizer *)longRecognizer{
+    
+    if (longRecognizer.state==UIGestureRecognizerStateBegan) {
+        //成为第一响应者，需重写该方法
+        [self becomeFirstResponder];
+        
+        CGPoint location = [longRecognizer locationInView:self.tableView];
+        NSIndexPath * indexPath = [self.tableView indexPathForRowAtPoint:location];
+        //可以得到此时你点击的哪一行
+        
+        //在此添加你想要完成的功能
+        AZLFileObject *fileObject = self.fileObject.subPaths[indexPath.row];
+        
+        NSURL *objectUrl = [NSURL fileURLWithPath:fileObject.fullPath];
+        
+        NSArray *objectsToShare = @[objectUrl]; 
+        
+        UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil]; 
+        
+        // Exclude all activities except AirDrop. 
+        NSArray *excludedActivities = @[UIActivityTypePostToTwitter, UIActivityTypePostToFacebook, 
+                                        UIActivityTypePostToWeibo, 
+                                        UIActivityTypeMessage, UIActivityTypeMail, 
+                                        UIActivityTypePrint, UIActivityTypeCopyToPasteboard, 
+                                        UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, 
+                                        UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr, 
+                                        UIActivityTypePostToVimeo, UIActivityTypePostToTencentWeibo]; 
+        controller.excludedActivityTypes = excludedActivities; 
+        
+        // Present the controller 
+        [self presentViewController:controller animated:YES completion:nil]; 
+    }
+    
 }
 
 /*

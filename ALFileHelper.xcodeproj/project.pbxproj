@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2058898B77661A1B7C0444E1 /* Pods_ALFileHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA1348A23C9B9A86D3D1E2A /* Pods_ALFileHelper.framework */; };
 		8CF22F8922A1182600BAA867 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F8822A1182600BAA867 /* AppDelegate.m */; };
 		8CF22F8C22A1182600BAA867 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22F8B22A1182600BAA867 /* ViewController.m */; };
 		8CF22F8F22A1182600BAA867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF22F8D22A1182600BAA867 /* Main.storyboard */; };
@@ -19,9 +20,11 @@
 		8CF22FAE22A118E400BAA867 /* AZLFileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22FA622A1184400BAA867 /* AZLFileObject.m */; };
 		8CF22FAF22A118F000BAA867 /* AZLFileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22FA322A1184400BAA867 /* AZLFileListViewController.m */; };
 		8CF22FB022A118F200BAA867 /* AZLFileTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF22FA422A1184400BAA867 /* AZLFileTextViewController.m */; };
+		8CF4BADD22DF26CF00E4F88E /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF4BADC22DF26CF00E4F88E /* UINavigationController+FDFullscreenPopGesture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7FA1348A23C9B9A86D3D1E2A /* Pods_ALFileHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ALFileHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF22F8422A1182600BAA867 /* ALFileHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALFileHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF22F8722A1182600BAA867 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8CF22F8822A1182600BAA867 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,6 +46,10 @@
 		8CF22FA822A1184400BAA867 /* AZLFileObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZLFileObject.h; sourceTree = "<group>"; };
 		8CF22FA922A1188C00BAA867 /* JumpVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpVCModel.m; sourceTree = "<group>"; };
 		8CF22FAA22A1188C00BAA867 /* JumpVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumpVCModel.h; sourceTree = "<group>"; };
+		8CF4BADB22DF26CF00E4F88E /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		8CF4BADC22DF26CF00E4F88E /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		E45FF1578DBF5FC18E0E3766 /* Pods-ALFileHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALFileHelper.release.xcconfig"; path = "Target Support Files/Pods-ALFileHelper/Pods-ALFileHelper.release.xcconfig"; sourceTree = "<group>"; };
+		ED237B7021CBABA71B4B623E /* Pods-ALFileHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALFileHelper.debug.xcconfig"; path = "Target Support Files/Pods-ALFileHelper/Pods-ALFileHelper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2058898B77661A1B7C0444E1 /* Pods_ALFileHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +69,8 @@
 			children = (
 				8CF22F8622A1182600BAA867 /* ALFileHelper */,
 				8CF22F8522A1182600BAA867 /* Products */,
+				D71B28ACC174DF560A2888F4 /* Pods */,
+				FB2BE4C2AE64D225FA0690B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +85,7 @@
 		8CF22F8622A1182600BAA867 /* ALFileHelper */ = {
 			isa = PBXGroup;
 			children = (
+				8CF4BADA22DF26B700E4F88E /* Cate */,
 				8CF22F9D22A1184400BAA867 /* FileHelper */,
 				8CF22F8722A1182600BAA867 /* AppDelegate.h */,
 				8CF22F8822A1182600BAA867 /* AppDelegate.m */,
@@ -123,6 +134,33 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		8CF4BADA22DF26B700E4F88E /* Cate */ = {
+			isa = PBXGroup;
+			children = (
+				8CF4BADB22DF26CF00E4F88E /* UINavigationController+FDFullscreenPopGesture.h */,
+				8CF4BADC22DF26CF00E4F88E /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = Cate;
+			sourceTree = "<group>";
+		};
+		D71B28ACC174DF560A2888F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED237B7021CBABA71B4B623E /* Pods-ALFileHelper.debug.xcconfig */,
+				E45FF1578DBF5FC18E0E3766 /* Pods-ALFileHelper.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB2BE4C2AE64D225FA0690B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FA1348A23C9B9A86D3D1E2A /* Pods_ALFileHelper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CF22F9A22A1182700BAA867 /* Build configuration list for PBXNativeTarget "ALFileHelper" */;
 			buildPhases = (
+				203B542A33FAF72E581A9076 /* [CP] Check Pods Manifest.lock */,
 				8CF22F8022A1182600BAA867 /* Sources */,
 				8CF22F8122A1182600BAA867 /* Frameworks */,
 				8CF22F8222A1182600BAA867 /* Resources */,
+				B68150D891446DEDD6D95003 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,6 +229,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		203B542A33FAF72E581A9076 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ALFileHelper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B68150D891446DEDD6D95003 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ALFileHelper/Pods-ALFileHelper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ALFileHelper/Pods-ALFileHelper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8CF22F8022A1182600BAA867 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -197,6 +284,7 @@
 				8CF22FAD22A118E100BAA867 /* AZLFileHelper.m in Sources */,
 				8CF22FB022A118F200BAA867 /* AZLFileTextViewController.m in Sources */,
 				8CF22F8C22A1182600BAA867 /* ViewController.m in Sources */,
+				8CF4BADD22DF26CF00E4F88E /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				8CF22F9722A1182700BAA867 /* main.m in Sources */,
 				8CF22FAB22A1188C00BAA867 /* JumpVCModel.m in Sources */,
 				8CF22FAE22A118E400BAA867 /* AZLFileObject.m in Sources */,
@@ -341,6 +429,7 @@
 		};
 		8CF22F9B22A1182700BAA867 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED237B7021CBABA71B4B623E /* Pods-ALFileHelper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -357,6 +446,7 @@
 		};
 		8CF22F9C22A1182700BAA867 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E45FF1578DBF5FC18E0E3766 /* Pods-ALFileHelper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
